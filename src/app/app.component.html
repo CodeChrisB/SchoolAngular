@@ -1,0 +1,54 @@
+
+<body>
+<h1>Hello 4BHIF</h1>
+
+  <hr>
+  <input type="text" [(ngModel)]="title"/>
+  <div hidden>{{title}}</div>
+
+  <ol *ngIf="visible">
+    <li [style.backgroundColor]="reverseTitle()" >{{getTitle()}}</li>
+    <li [style.backgroundColor]="title">{{getTitle()}}</li>
+    <li [style.backgroundColor]="reverseTitle()">{{getTitle()}}</li>
+    <li [style.backgroundColor]="title">{{getTitle()}}</li>
+    <li [style.backgroundColor]="reverseTitle()">{{getTitle()}}</li>
+
+  </ol>
+  <hr>
+  <button [style.backgroundColor]="title" (click)="onClick()">Click Me</button>
+
+
+<body>
+
+
+
+<style>
+
+
+  *{
+    font-size: larger;
+    font-weight: larger;
+  }
+
+  li:nth-child(even) {background: #CCC}
+  li:nth-child(odd) {background: rgb(148, 146, 146)}
+
+
+  button {
+  border: none;
+  color: black;
+  background-color: greenyellow;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+}
+</style>
