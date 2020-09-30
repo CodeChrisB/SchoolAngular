@@ -1,22 +1,33 @@
 
 <body>
-<h1>Hello 4BHIF</h1>
+<h1>Bookless Demo Coding</h1>
 
   <hr>
-  <input type="text" [(ngModel)]="title"/>
+  <input type="text" placeholder="HEX VALUE" [(ngModel)]="title"/>
+ <br>
+  <input type="text" placeholder="Search Name" [(ngModel)]="match"/>
   <div hidden>{{title}}</div>
 
   <ol *ngIf="visible">
-    <li [style.backgroundColor]="reverseTitle()" >{{getTitle()}}</li>
+    <li [style.backgroundColor]="reverseTitle()" >{{reverseTitle()}}</li>
     <li [style.backgroundColor]="title">{{getTitle()}}</li>
-    <li [style.backgroundColor]="reverseTitle()">{{getTitle()}}</li>
+    <li [style.backgroundColor]="reverseTitle()">{{reverseTitle()}}</li>
     <li [style.backgroundColor]="title">{{getTitle()}}</li>
-    <li [style.backgroundColor]="reverseTitle()">{{getTitle()}}</li>
-
+    <li [style.backgroundColor]="reverseTitle()">{{reverseTitle()}}</li>
   </ol>
   <hr>
   <button [style.backgroundColor]="title" (click)="onClick()">Click Me</button>
 
+{{match}}
+  <ol *ngIf="visible">
+    <div *ngFor="let person of persons">
+      {{person.name}}
+      <div *ngIf="mathes(person.name)">
+      {{person.name}} is {{person.age}} years old.
+    </div>
+  </div>
+
+  </ol>
 
 <body>
 
