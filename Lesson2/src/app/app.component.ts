@@ -74,7 +74,8 @@ export class AppComponent {
   }
 
 
-  persons =[{"id":1,"gender":"M","firstname":"Fred","lastname":"Perez","email":"fperez0@google.com.br","country":"Finland","age":32,"registered":false},
+  persons =
+  [{"id":1,"gender":"M","firstname":"Fred","lastname":"Perez","email":"fperez0@google.com.br","country":"Finland","age":32,"registered":false},
   {"id":2,"gender":"F","firstname":"Phyllis","lastname":"Boyd","email":"pboyd1@youtube.com","country":"Sweden","age":26,"registered":false},
   {"id":3,"gender":"M","firstname":"Johnny","lastname":"Kelly","email":"jkelly2@answers.com","country":"Philippines","age":76,"registered":false},
   {"id":4,"gender":"F","firstname":"Betty","lastname":"Torres","email":"btorres3@github.io","country":"China","age":38,"registered":true},
