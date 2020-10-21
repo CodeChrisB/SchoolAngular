@@ -1,0 +1,103 @@
+
+<body>
+<h1></h1>
+<div id="container" style="white-space:nowrap">
+  <div class="navbar">
+    <a>{{title}}</a>
+  </div>
+</div><br>
+<h1>Add new Customer</h1> 
+<input type="text" placeholder="Firstname"  [(ngModel)]="fname"/>
+<input type="text" placeholder="Lastname"  [(ngModel)]="lname"/>
+<input type="text" placeholder="Country"  [(ngModel)]="country"/>
+<input type="text" placeholder="Email"  [(ngModel)]="email"/>
+
+<button (click) ="addCustomer()" type="button">Add Customer</button>
+<br>
+{{fname}},{{lname}},{{country}},{{email}}
+<hr>
+<h1>Search Lastname</h1>
+<input type="text"  placeholder="Search Lastname" [(ngModel)]="search"/>
+{{search}}
+<hr>
+<h1>Sort by</h1>
+<button (click) ="sortByFirstname()">Firstname</button>
+<button (click) ="sortByLastname()">Lastname</button>
+<button (click) ="sortByCountry()">Country</button>
+<hr>
+
+
+<div *ngFor="let person of persons, let i=index">
+    <div *ngIf="match(person.lastname)"
+      (mouseover) ="actCountry = person.country"
+      [style.background-color] = getColor(person.country)
+    >
+    <person-row [person] ="person" (deleteMe)="onDeleteMe(i)"></person-row>
+    </div>
+  </div>
+<body>
+
+
+
+<style>
+
+
+  *{
+    font-size: larger;
+    font-weight: larger;
+  }
+
+  li:nth-child(even) {background: #CCC}
+  li:nth-child(odd) {background: rgb(148, 146, 146)}
+
+h1{
+  font-size: 30px;
+}
+  button {
+  border: none;
+  color: black;
+  background-color: greenyellow;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: green;
+}
+
+input[type=text],input[type=submit], select {
+  padding: 12px 20px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+</style>

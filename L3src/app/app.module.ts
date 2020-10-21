@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
-import { HttpClientModule } from '@angular/common/http';
-import { PersonService } from './person.service';
-
 
 @NgModule({
   declarations: [
@@ -14,11 +11,9 @@ import { PersonService } from './person.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
-    
+    FormsModule
   ],
-  providers: [PersonService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
