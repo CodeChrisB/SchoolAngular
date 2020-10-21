@@ -18,8 +18,8 @@ export class AppComponent {
   actCountry : string = ''
   
   //create variable for service
-  public ps;
-  public persons = []
+  public ps : PersonService;
+  public persons : Person[] = []
   //set data into variable from service
   constructor(ps:PersonService){
      this.ps = ps;
@@ -38,13 +38,13 @@ export class AppComponent {
 
   // filter list by firstname
   public sortByFirstname() {
-   this.persons.sort((a,b) => a.firstname.localeCompare(b.firstname))
+   this.ps.persons.sort((a,b) => a.firstname.localeCompare(b.firstname))
   }
   public sortByLastname() {
-    this.persons.sort((a,b) => a.lastname.localeCompare(b.lastname))
+    this.ps.persons.sort((a,b) => a.lastname.localeCompare(b.lastname))
    }
   public sortByCountry() {
-    this.persons.sort((a,b) => a.country.localeCompare(b.country))
+    this.ps.persons.sort((a,b) => a.country.localeCompare(b.country))
   }
 
   //get Color
@@ -62,7 +62,7 @@ export class AppComponent {
     })
     lastId++;
 
-   var c =
+   var c : Person =
    {"firstname" : this.fname,
    "lastname": this.lname, 
    "id":lastId,
@@ -70,7 +70,7 @@ export class AppComponent {
    "email":this.email,
    "country": this.country,
    "age":-1,
-   "registered":false}
+   "regsiterd":false}
 
    this.persons.push(c)
    alert('Added ' +this.lname +" "+this.fname)

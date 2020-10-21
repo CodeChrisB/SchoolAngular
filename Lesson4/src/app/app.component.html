@@ -27,7 +27,7 @@
 <hr>
 
 
-<div *ngFor="let person of persons, let i=index">
+<div *ngFor="let person of ps.persons, let i=index">
     <div *ngIf="match(person.lastname)"
       (mouseover) ="actCountry = person.country"
       [style.background-color] = getColor(person.country)
