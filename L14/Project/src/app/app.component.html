@@ -1,0 +1,20 @@
+<h1>Enter:</h1>
+fistname: <input #firstname type="text" />    lastname: <input #lastname type="text"/>
+<button (click)="onAdd(firstname, lastname)">Add</button>
+<hr/>
+<h1>Search lastname:</h1>
+<input type="text" [(ngModel)]="searchString"/>
+<hr/>
+<h1>Sort:</h1>
+<button (click)="sortByFirstName()">firstname</button>
+<button (click)="sortByLastName()">lastname</button>
+<button (click)="sortByCountry()">country</button>
+<hr>
+<div *ngFor="let person of personSevice.persons, let i=index">
+  <div *ngIf="matchesSearch(person)"
+       (mouseover)="actCountry = person.country"
+       [style.background-color]="getColor(person)">
+
+    <app-person-ditail [person]=person (deleteme)="onDelete(person.id)"></app-person-ditail>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<img [src]="getImage(person)" style="width:30px;height:30px"/>
+
+{{person.id}}: {{person.firstname}},<b>{{person.lastname}}</b>,<i>{{person.country}}</i>
+
+<img (click)=onDelete() height="20px" width="auto" src="assets/delete_icon.png">
+<hr>

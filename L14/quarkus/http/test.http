@@ -1,0 +1,31 @@
+GET http://localhost:8080/person/message
+###
+GET http://localhost:8080/person/init
+###
+GET http://localhost:8080/person/findAll
+###
+GET http://localhost:8080/person/find/100
+###
+DELETE http://localhost:8080/person/delete/1
+###
+POST http://localhost:8080/person/create
+Content-Type: application/json
+
+{
+  "id":100,
+  "firstname": "Zeus",
+  "lastname": "Zeppelin",
+  "country": "Zypern",
+  "gender": "M"
+}
+###
+PUT http://localhost:8080/person/update
+Content-Type: application/json
+
+{
+  "id":100,
+  "firstname": "Zeus NEU",
+  "lastname": "Zeppelin NEU",
+  "country": "Zypern NEU",
+  "gender": "M NEU"
+}

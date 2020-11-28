@@ -1,0 +1,16 @@
+button{
+    background-color: greenyellow;
+    width: 150px;
+    height: 60px;
+}
+
+input[type=text] {
+    width: 80%;
+    padding: 15px 22px;
+    margin: 10px 5px;
+    box-sizing: border-box;  
+}
+
+#danger{
+    background-color: red;
+}
