@@ -23,7 +23,7 @@ export class PersonDitailComponent implements OnInit {
       return 'assets/man.png';
     }
 
-    return 'assets/woman.png';
+    return 'assets/female.png';
   }
 
   onDelete(): void {

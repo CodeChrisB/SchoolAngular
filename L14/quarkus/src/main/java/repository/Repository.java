@@ -4,6 +4,7 @@ import entity.Person;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class Repository {
     }
 
     // Löschen einer Person
+    @Transactional
     public void delete(long personID) {
         persons.removeIf((person) -> person.getId()==personID);
     }

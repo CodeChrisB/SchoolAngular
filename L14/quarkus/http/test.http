@@ -4,16 +4,16 @@ GET http://localhost:8080/person/init
 ###
 GET http://localhost:8080/person/findAll
 ###
-GET http://localhost:8080/person/find/100
+GET http://localhost:8080/person/find/3
 ###
-DELETE http://localhost:8080/person/delete/1
+DELETE http://localhost:8080/person/delete/2
 ###
 POST http://localhost:8080/person/create
 Content-Type: application/json
 
 {
   "id":100,
-  "firstname": "Zeus",
+  "firstname": "Beerta",
   "lastname": "Zeppelin",
   "country": "Zypern",
   "gender": "M"

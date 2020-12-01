@@ -43,7 +43,7 @@ public class PersonService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Person> findAll() {
-        return repo.findAll();
+        return dbRepo.findAll();
     }
 
     // Eine Person senden
@@ -58,8 +58,8 @@ public class PersonService {
     @Path("delete/{id}")
     @DELETE
     public String deletePerson(@PathParam("id") long id) {
-        repo.delete(id);
-        return "person deleted";
+        dbRepo.delete(id);
+        return id+"";
     }
 
     // Eine Person hinzufügen
@@ -76,10 +76,13 @@ public class PersonService {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public String updatePerson(Person person) {
-        repo.update(person);
+        dbRepo.update(person);
         return "person updated";
     }
-
-
-
+    @Path("deleteAll")
+    @DELETE
+    public String deleteAll(){
+        dbRepo.deleteAll();
+        return "all persons deleted";
+    }
 }

@@ -75,6 +75,18 @@ export class AppComponent implements OnInit {
 
   onDelete(id: number) {
     this.personSevice.delete(id);
-    this.ngOnInit();
   }
+
+  names = ["Emil", "Tobias", "Linus"];
+ items = [
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+   {'country':'Österreich'},
+  ]
 }

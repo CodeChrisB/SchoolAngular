@@ -1,14 +1,14 @@
-Sat Nov 28 18:08:57 CET 2020 : Apache Derby Network Server 10.14.2.0 - (1828579) wurde gestartet und ist bereit, Verbindungen auf Port 1527 zu akzeptieren.
+Sun Nov 29 17:11:43 CET 2020 : Apache Derby Network Server 10.14.2.0 - (1828579) wurde gestartet und ist bereit, Verbindungen auf Port 1527 zu akzeptieren.
 ----------------------------------------------------------------
-Sat Nov 28 18:09:01 CET 2020:
-Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): Instanz a816c00e-0176-0fd4-307a-0000790a1edc
-für Datenbankverzeichnis C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\Derby\db-derby-10.14.2.0-bin\bin\mydb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44
-Geladen aus file:/C:/Users/cbuch/Daten/HTL/4BHIF/Angular/Projects/SchoolAngular/Derby/db-derby-10.14.2.0-bin/lib/derby.jar
+Sun Nov 29 17:13:19 CET 2020:
+Booten von Derby-Version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): Instanz a816c00e-0176-14c6-25b5-fffffed91e29
+für Datenbankverzeichnis C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\L14\Derby\db-derby-10.14.2.0-bin\bin\mydb mit Class Loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44
+Geladen aus file:/C:/Users/cbuch/Daten/HTL/4BHIF/Angular/Projects/SchoolAngular/L14/Derby/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=12+33
-user.dir=C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\Derby\db-derby-10.14.2.0-bin\bin
+user.dir=C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\L14\Derby\db-derby-10.14.2.0-bin\bin
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\Derby\db-derby-10.14.2.0-bin\bin
+derby.system.home=C:\Users\cbuch\Daten\HTL\4BHIF\Angular\Projects\SchoolAngular\L14\Derby\db-derby-10.14.2.0-bin\bin
 Datenbank-Class Loader wurde gestartet - derby.database.classpath=''

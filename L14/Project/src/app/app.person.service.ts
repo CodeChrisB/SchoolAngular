@@ -44,8 +44,9 @@ export class PersonService {
     const options = {
       headers: headers
     }
-
+    console.dir(this.url + '/delete/' + id)
     this.http.delete<Person>(this.url + '/delete/' + id, options).subscribe(data => this.persons = data);
+    this.findAll()
   }
 
 }

@@ -1,19 +1,18 @@
 package repository;
 
-
 import entity.Person;
-import java.util.LinkedList;
-import java.util.List;
-import javax.annotation.PostConstruct;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  *
- * @author H. Lackinger
- */
+ * @author Christopher Buchberger
+ *
+ * */
 @ApplicationScoped
 public class DBRepository {
 
@@ -24,9 +23,13 @@ public class DBRepository {
     // Initialisieren
     //@PostConstruct
     public void initDB() {
+        System.out.println("DB INIT");
         this.create(new Person(1,"Anton","Aigner","Austria","M"));
         this.create(new Person(2,"Berta","Bauer","Bayern","F"));
         this.create(new Person(3,"Caesar","Cerny","Chile","M"));
+        this.create(new Person(4,"Irene","Brandstätter","Thailand","F"));
+        this.create(new Person(5,"Markus","Person","New York","M"));
+        this.create(new Person(6,"Joe","Delgardo","Italien","M"));
     }
 
     // Finden einer Person über ID in der DB
@@ -41,4 +44,25 @@ public class DBRepository {
         return person;
     }
 
+    // Löschen einer Person
+    @Transactional
+    public long delete(long id){
+        em.remove(this.find(id));
+        return id;
+    }
+
+    public List<Person> findAll(){
+        return em.createQuery("SELECT p FROM Person p").getResultList();
+    }
+
+
+    @Transactional
+    public void update(Person person){
+        em.merge(person);
+    }
+    @Transactional
+    public void deleteAll(){
+        List<Person> personList = em.createQuery("SELECT p FROM Person p").getResultList();
+        personList.forEach(i -> em.remove(i));
+    }
 }

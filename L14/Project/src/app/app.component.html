@@ -1,3 +1,23 @@
+<div>
+  <h1>New Customer</h1>
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select ng-Options id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 <h1>Enter:</h1>
 fistname: <input #firstname type="text" />    lastname: <input #lastname type="text"/>
 <button (click)="onAdd(firstname, lastname)">Add</button>
@@ -15,6 +35,6 @@ fistname: <input #firstname type="text" />    lastname: <input #lastname type="t
        (mouseover)="actCountry = person.country"
        [style.background-color]="getColor(person)">
 
-    <app-person-ditail [person]=person (deleteme)="onDelete(person.id)"></app-person-ditail>
+    <app-person-ditail [person]=person (click)="onDelete(person.id)"></app-person-ditail>
   </div>
 </div>
