@@ -24,9 +24,10 @@ public class DBRepository {
     //@PostConstruct
     public void initDB() {
         System.out.println("DB INIT");
-        this.create(new Person(1,"Anton","Aigner","Austria","M"));
-        this.create(new Person(2,"Berta","Bauer","Bayern","F"));
-        this.create(new Person(3,"Caesar","Cerny","Chile","M"));
+        this.deleteAll();
+        this.create(new Person(9,"Anton","Zeigna","Austria","M"));
+        this.create(new Person(8,"Kiara","Wohlberger","Bayern","F"));
+        this.create(new Person(7,"Caesar","Zensery","Chile","M"));
         this.create(new Person(4,"Irene","Brandstätter","Thailand","F"));
         this.create(new Person(5,"Markus","Person","New York","M"));
         this.create(new Person(6,"Joe","Delgardo","Italien","M"));
@@ -49,6 +50,12 @@ public class DBRepository {
     public long delete(long id){
         em.remove(this.find(id));
         return id;
+    }
+
+    // Löschen einer Person
+    @Transactional
+    public void deleteAll(long id){
+        this.findAll().forEach(person -> delete(person.getId()));
     }
 
     public List<Person> findAll(){

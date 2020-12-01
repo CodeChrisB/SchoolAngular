@@ -24,7 +24,19 @@ input[type=text], select {
   }
   
   div {
+   
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+  }
+
+
+
+
+  /* TAB BUTTON */
+
+  .tab{
+    background-color: #45a049;
+    width: 100%;
+    height: 60px;
   }

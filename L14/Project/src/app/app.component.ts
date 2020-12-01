@@ -15,7 +15,14 @@ export class AppComponent implements OnInit {
   public searchString: string = '';
   public actCountry: string = '';
   public imgUrl: string = '';
+  public ncshow: boolean = true;
+  public nsshow: boolean = true;
+  public nlshow: boolean = true;
 
+
+  public nc(){
+    this.ncshow=!this.ncshow
+  }
   private findCurrentId() : number{
     return this.personSevice.persons[length - 1].id + 1;
   }
@@ -38,6 +45,7 @@ export class AppComponent implements OnInit {
 
   // Add Person
   onAdd(firstname: string, lastname:string ){
+    alert('add')
     this.personSevice.addPerson(new Person(this.findCurrentId(), 'M', firstname, lastname, 'Austria'));
   }
 
@@ -56,11 +64,11 @@ export class AppComponent implements OnInit {
   }
 
   public matches(person): boolean {
-    return person.country.toUpperCase().indexOf(this.actCountry.toLocaleUpperCase()) == 0;
+    return person.country.toUpperCase().indexOf(this.actCountry.toLocaleUpperCase()) != -1;
   }
 
   public matchesSearch(person): boolean {
-    return person.lastname.toUpperCase().indexOf(this.searchString.toUpperCase()) == 0;
+    return person.lastname.toUpperCase().indexOf(this.searchString.toUpperCase()) != -1;
   }
 
   public getColor(person): string {
@@ -73,20 +81,11 @@ export class AppComponent implements OnInit {
 
   }
 
+
+
   onDelete(id: number) {
     this.personSevice.delete(id);
   }
 
-  names = ["Emil", "Tobias", "Linus"];
- items = [
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-   {'country':'Österreich'},
-  ]
+
 }

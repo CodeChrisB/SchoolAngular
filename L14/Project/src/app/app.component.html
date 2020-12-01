@@ -1,8 +1,13 @@
-<div>
+<button  (click)="ncshow=!ncshow" class="tab">Show Add Area</button><br>
+
+
+<div class="half" *ngIf="ncshow">
+  <h1>Enter:</h1>
   <h1>New Customer</h1>
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+ 
+  <form >
+    <label #firstname for="fname">First Name</label>
+    <input #lastname type="text" id="fname" name="firstname" placeholder="Your name..">
 
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
@@ -14,27 +19,33 @@
       <option value="usa">USA</option>
     </select>
   
-    <input type="submit" value="Submit">
+    <input (click)="onAdd(firstname, lastname)" type="submit" value="Submit">
   </form>
 </div>
 
-<h1>Enter:</h1>
-fistname: <input #firstname type="text" />    lastname: <input #lastname type="text"/>
-<button (click)="onAdd(firstname, lastname)">Add</button>
-<hr/>
-<h1>Search lastname:</h1>
-<input type="text" [(ngModel)]="searchString"/>
-<hr/>
-<h1>Sort:</h1>
-<button (click)="sortByFirstName()">firstname</button>
-<button (click)="sortByLastName()">lastname</button>
-<button (click)="sortByCountry()">country</button>
-<hr>
-<div *ngFor="let person of personSevice.persons, let i=index">
-  <div *ngIf="matchesSearch(person)"
-       (mouseover)="actCountry = person.country"
-       [style.background-color]="getColor(person)">
+<button (click)="nsshow=!nsshow" class="tab">Show Search Area</button>
 
-    <app-person-ditail [person]=person (click)="onDelete(person.id)"></app-person-ditail>
+<div *ngIf="nsshow" class="half">
+  <hr/>
+  <h1>Search lastname:</h1>
+  <input type="text" [(ngModel)]="searchString"/>
+  <hr/>
+  <h1>Sort:</h1>
+  <button (click)="sortByFirstName()">firstname</button>
+  <button (click)="sortByLastName()">lastname</button>
+  <button (click)="sortByCountry()">country</button>
+  <hr>
+</div>
+
+<button (click)="nlshow=!nlshow" class="tab">Show Search Area</button>
+<div *ngIf="nlshow">
+  <div *ngFor="let person of personSevice.persons, let i=index">
+    <div *ngIf="matchesSearch(person)"
+        (mouseover)="actCountry = person.country"
+        [style.background-color]="getColor(person)">
+
+      <app-person-ditail [person]=person (click)="onDelete(person.id)"></app-person-ditail>
+    </div>
   </div>
 </div>
+
